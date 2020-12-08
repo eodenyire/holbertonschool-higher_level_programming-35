@@ -3,7 +3,7 @@ import random
 number = random.randint(-10000, 10000)
 
 # Verify if the number is positive and get the last digit
-if number >= 0:
+if number > 0:
     lastdigit = number % 10
 
 # If the number is negative we multiply by a negative to have a positive number
