@@ -6,4 +6,3 @@ def uppercase(str):
             convr = convr - 32
         print("{:c}".format(convr), end="")
     print()
-
