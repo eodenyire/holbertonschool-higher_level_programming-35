@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Create a new class Base """
+from os import path
 import json
 
 
@@ -60,8 +61,9 @@ class Base:
         new_l = []
         rtn_empty = []
         file = "{}.json".format(cls.__name__)
-        with open(file, 'r') as f:
-            new_l = cls.from_json_string(f.read())
-        for val in new_l:
-            rtn_empty.append(cls.create(**val))
-        return (rtn_empty)
+        if path.isfile(file):
+            with open(file, 'r') as f:
+                new_l = cls.from_json_string(f.read())
+            for val in new_l:
+                rtn_empty.append(cls.create(**val))
+            return (rtn_empty)
