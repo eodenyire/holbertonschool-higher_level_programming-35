@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 if (process.argv[3]) {
 	console.log('Arguments found');

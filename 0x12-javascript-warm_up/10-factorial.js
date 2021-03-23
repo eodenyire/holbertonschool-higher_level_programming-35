@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 function factorial (num) {
   if (num === 0 || !Number(num)) {
