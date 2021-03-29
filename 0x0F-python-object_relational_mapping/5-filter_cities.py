@@ -16,10 +16,10 @@ if __name__ == '__main__':
                 INNER JOIN states ON cities.state_id = states.id\
                 WHERE states.name = %s ORDER BY cities.id ASC", [argv[4]])
 
-    j = []
     rows = cur.fetchall()
+    j = []
     for i in rows:
-        j.append(i[0])
+        j.append(i[1])
     print(", ".join(j))
 
     # Clean up process
