@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument
+Script that takes in an argument and displays all values in the states
+table of hbtn_0e_0_usa where name matches the argument
 """
 import MySQLdb
 from sys import argv
@@ -15,9 +16,9 @@ if __name__ == '__main__':
     # It gives us the ability to have multiple seperate working environments
     # through the same connection to the database.
     cur = db.cursor()
-    nameSrch = "SELECT * FROM states WHERE name = '{}'\
-                ORDER BY id ASC".format(argv[4])
-    cur.execute(nameSrch)
+    nmeSr = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
+            argv[4])
+    cur.execute(nmeSr)
 
     rows = cur.fetchall()
     for i in rows:
