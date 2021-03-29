@@ -2,10 +2,11 @@
 """
 Script that prints the first State object from the database
 """
+
 from model_state import Base, State
-from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sys import argv
 
 if __name__ == "__main__":
     # create an engine
@@ -16,11 +17,10 @@ if __name__ == "__main__":
     session = Session(bind=engine)
 
     Base.metadata.create_all(engine)
-    s_tate = session.query(State).first()
+    s_tate = session.query(State).order_by(State.id).first()
 
     if s_tate:
         print("{}: {}".format(state.id, state.name))
     else:
         print("Nothing")
-
     session.close()
