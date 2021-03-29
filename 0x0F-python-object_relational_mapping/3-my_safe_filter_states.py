@@ -17,8 +17,8 @@ if __name__ == '__main__':
     # It gives us the ability to have multiple seperate working environments
     # through the same connection to the database.
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %s\
-                ORDER BY id ASC".format(argv[4]))
+    n = "SELECT * FROM states WHERE name = %s ORDER BY id ASC".format(argv[4])
+    cur.execute(n)
 
     rows = cur.fetchall()
     for i in rows:
