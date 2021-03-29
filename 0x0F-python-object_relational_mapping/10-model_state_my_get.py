@@ -20,7 +20,7 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    s_tate = session.query(State).filter(State.name == argv[4]).all()
+    s_tate = session.query(State).filter(State.name == argv[4]).first()
 
     if s_tate:
         print("{}".format(s_tate.id))
