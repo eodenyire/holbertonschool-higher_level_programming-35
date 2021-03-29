@@ -23,7 +23,7 @@ if __name__ == "__main__":
     s_tate = session.query(State).filter(State.name == argv[4]).all()
 
     if s_tate:
-        print("{}".format(state.id))
+        print("{}".format(s_tate.id))
     else:
         print("Not found")
     session.close()
